@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-green: #39ff14;
+  --color-neon-pink: #ff00ff;
+  --color-neon-cyan: #00ffff;
+  --color-dark-bg: #050505;
+}
+
+.text-glow-green { text-shadow: 0 0 8px var(--color-neon-green), 0 0 16px var(--color-neon-green); }
+.text-glow-pink { text-shadow: 0 0 8px var(--color-neon-pink), 0 0 16px var(--color-neon-pink); }
+.text-glow-cyan { text-shadow: 0 0 8px var(--color-neon-cyan), 0 0 16px var(--color-neon-cyan); }
+.box-glow-green { box-shadow: 0 0 12px var(--color-neon-green), 0 0 20px var(--color-neon-green), inset 0 0 10px rgba(57, 255, 20, 0.5); border-color: var(--color-neon-green); }
+.box-glow-pink { box-shadow: 0 0 12px var(--color-neon-pink), inset 0 0 10px rgba(255, 0, 255, 0.5); border-color: var(--color-neon-pink); }
+.box-glow-cyan { box-shadow: 0 0 12px var(--color-neon-cyan), inset 0 0 10px rgba(0, 255, 255, 0.5); border-color: var(--color-neon-cyan); }
+
+@media (min-width: 1024px) {
+  .crt-overlay::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 20;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+}
